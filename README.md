@@ -22,6 +22,12 @@ docker build -f ./src/main/docker/Dockerfile -t kbe-rest .
 docker run -p 8080:8080 -d kbe-rest
 ```
 
+## Pushing to Docker Hub
+
+```shell
+mvn clean package docker:build docker:push
+```
+
 ## Connect with Spring Framework Guru
 * Spring Framework Guru [Blog](https://springframework.guru/)
 * Subscribe to Spring Framework Guru on [YouTube](https://www.youtube.com/channel/UCrXb8NaMPQCQkT8yMP_hSkw)
