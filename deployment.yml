@@ -10,7 +10,7 @@ spec:
   selector:
     matchLabels:
       app: kbe-rest
-  strategy: {}
+  strategy: { }
   template:
     metadata:
       creationTimestamp: null
@@ -18,10 +18,18 @@ spec:
         app: kbe-rest
     spec:
       containers:
-      - image: qbert2k/kbe-rest-brewery
-        name: kbe-rest-brewery
-        resources: {}
-        env:
-          - name: LOGGING_LEVEL_GURU_SPRINGFRAMEWORK_SFGRESTBREWERY
-            value: info
-status: {}
+        - image: qbert2k/kbe-rest-brewery
+          name: kbe-rest-brewery
+          resources: { }
+          env:
+            - name: LOGGING_LEVEL_GURU_SPRINGFRAMEWORK_SFGRESTBREWERY
+              value: "info"
+            - name: MANAGEMENT_ENDPOINT_HEALTH_PROBES_ENABLED
+              value: "true"
+            - name: MANAGEMENT_HEALTH_READINESSTATE_ENABLED
+              value: "true"
+          readinessProbe:
+            httpGet:
+              port: 8080
+              path: /actuator/health/readiness
+status: { }
