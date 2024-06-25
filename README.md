@@ -60,3 +60,21 @@ kubectl get all
 
 docker ps
 ```
+
+### Create Service
+
+```shell
+kubectl create service clusterip kbe-rest --tcp=8080:8080 --dry-run=client -o=waml >> service.yml
+
+kubectl apply -f service.yml
+
+kubectl get all
+```
+
+### Port Forwarding
+
+```shell
+kubectl port-forward service/kbe-rest 8080:8080
+
+curl http://localhost:8080/actuator/health
+```
