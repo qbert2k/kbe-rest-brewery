@@ -87,3 +87,21 @@ kubectl delete deployment kbe-rest
 
 kubectl get all
 ```
+
+### Accessing Logs
+
+Use the container ID.
+
+```shell
+docker ps
+docker logs f34db2a0a6e3
+docker logs -f f34db2a0a6e3
+```
+
+Use the POD ID.
+
+```shell
+kubectl get all
+kubectl logs --tail=20 kbe-rest-d55d6bb68-7btz8
+kubectl logs -f kbe-rest-d55d6bb68-7btz8
+```
