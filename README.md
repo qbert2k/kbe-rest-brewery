@@ -34,3 +34,29 @@ mvn clean package docker:build docker:push
 * Like Spring Framework Guru on [Facebook](https://www.facebook.com/springframeworkguru/)
 * Follow Spring Framework Guru on [Twitter](https://twitter.com/spring_guru)
 * Connect with John Thompson on [LinkedIn](http://www.linkedin.com/in/springguru)
+
+## Kubernetes
+
+### Kubernetes Docker Desktop
+
+```shell
+kubectl config get-contexts
+
+kubectl config use-context docker-desktop
+
+kubectl get nodes
+
+kubectl get all
+```
+
+### Create Deployment
+
+```shell
+kubectl create deployment kbe-rest --image qbert2k/kbe-rest-brewery --dry-run=client -o=yaml > deployment.yml
+
+kubectl apply -f deployment.yml
+
+kubectl get all
+
+docker ps
+```

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: kbe-rest
+  name: kbe-rest
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kbe-rest
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: kbe-rest
+    spec:
+      containers:
+      - image: qbert2k/kbe-rest-brewery
+        name: kbe-rest-brewery
+        resources: {}
+status: {}
