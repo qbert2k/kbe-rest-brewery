@@ -28,6 +28,12 @@ spec:
               value: "true"
             - name: MANAGEMENT_HEALTH_READINESSTATE_ENABLED
               value: "true"
+            - name: MANAGEMENT_HEALTH_LIVENESSTATE_ENABLED
+              value: "true"
+          livenessProbe:
+            httpGet:
+              port: 8080
+              path: /actuator/health/liveness
           readinessProbe:
             httpGet:
               port: 8080
