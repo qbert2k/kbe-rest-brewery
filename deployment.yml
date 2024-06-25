@@ -21,4 +21,7 @@ spec:
       - image: qbert2k/kbe-rest-brewery
         name: kbe-rest-brewery
         resources: {}
+        env:
+          - name: LOGGING_LEVEL_GURU_SPRINGFRAMEWORK_SFGRESTBREWERY
+            value: info
 status: {}
