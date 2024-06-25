@@ -78,3 +78,12 @@ kubectl port-forward service/kbe-rest 8080:8080
 
 curl http://localhost:8080/actuator/health
 ```
+
+### Terminating Services and Deployments
+
+```shell
+kubectl delete service kbe-rest
+kubectl delete deployment kbe-rest
+
+kubectl get all
+```
